@@ -1,0 +1,131 @@
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(27, 56, 91, 1) 0%, rgba(35, 77, 109, 1) 41%, rgba(0, 5, 64, 1) 100%);
+  overflow-x: hidden;
+  background-size: 100% 100%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 0.4px;
+}
+
+/*breadcrumb start*/
+.breadcrumb {
+  width: 100%;
+  background-color: transparent;
+  color: #fff !important;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 100px;
+}
+
+.breadcrumb>li+li:before {
+  color: #ccc;
+  content: " " !important;
+  padding: 0 20px;
+}
+
+.breadcrumb-item a {
+  color: #fff;
+  font-size: 13px;
+}
+
+/*breadcrumb end*/
+
+
+.underbar {
+  width: 0;
+  height: 5px;
+  background: rgba(100, 100, 200, 0);
+  left: -50px;
+  top: 20px;
+  position: absolute;
+  -webkit-transition: 0.5s ease;
+}
+
+
+li {
+  -webkit-transition: 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+li:hover {
+  text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8), 0 -4px 15px rgba(255, 255, 255, 0.5);
+}
+
+li:hover>.underbar {
+  position: absolute;
+  left: 10px;
+  width: 45px;
+  background: #1ed760;
+  height: 3px;
+  text-decoration: none !important;
+  margin-top: -2px;
+}
+
+li a:hover {
+  text-decoration: none !important;
+}
+
+li:nth-of-type(2):hover>.underbar {
+  position: absolute;
+  left: 40px;
+  width: 44px;
+  background: #1ed760;
+}
+
+li:nth-of-type(3):hover>.underbar {
+  position: absolute;
+  left: 46px;
+  width: 110px;
+  background: #1ed760;
+}
+
+li:nth-of-type(4):hover>.underbar {
+  position: absolute;
+  left: 42px;
+  width: 75px;
+  background: #1ed760;
+}
+
+li:nth-of-type(5):hover>.underbar {
+  position: absolute;
+  left: 40px;
+  width: 50px;
+  background: #1ed760;
+}
+
+
+.songCardTitle {
+  text-align: center;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: .20s ease-in-out;
+  color: #252525;
+}
+
+.song-col {
+  flex-direction: column;
+}
+
+.songCover:hover ~ .songCardTitle {
+  transition: .20s ease-in-out;
+  color: #fff!important;
+
+}
+.addComment{
+  position: absolute;
+  top:5px;
+  color: #fff;
+  right: 25px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  border: none;
+  padding: 5px 10px;
+}
+.imageOfSong{
+  margin-left: 10px;
+}
