@@ -12,6 +12,8 @@ export const initialState = {
     museSongs:[],
     selectedSong:{},
     likedSongs:[],
+    playlists:{},
+    isSongSelected:false,
   },
   load: {
     loading: false,

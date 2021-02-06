@@ -5,6 +5,11 @@ import { AiFillPlayCircle } from "react-icons/ai";
 import { connect } from "react-redux";
 const mapStateToProps = (state) => state;
 const mapDispatchToProps = (dispatch) => ({
+  selectSong: (song) =>
+  dispatch({
+    type: "SELECT_SONG",
+    payload: song,
+  }),
   addDataToArtist: async (artistName) =>
     dispatch(async (dispatch, getState) => {
       let response = await fetch(
@@ -53,6 +58,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class Player extends Component {
+
   render() {
     return (
       <>

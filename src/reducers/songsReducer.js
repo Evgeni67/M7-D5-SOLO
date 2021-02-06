@@ -22,6 +22,7 @@ export default function (state = {}, action) {
         return {
           ...state,
           selectedSong: action.payload,
+          isSongSelected:true,
         };
         case "ADD_TO_LIKED":
           console.log(action.payload);
@@ -35,6 +36,12 @@ export default function (state = {}, action) {
               ...state,
               likedSongs: state.likedSongs.filter(x=> x.id !== action.payload),
             };
+            case "ADD_NEW_PLAYLIST":
+              console.log(action.payload);
+              return {
+                ...state,
+                [action.payload]:[],
+              };
         default:
         return state
     }

@@ -30,9 +30,7 @@ class Song extends Component {
         <img src={this.props.song.album.cover_medium} onClick={()=> this.props.selectSong(this.props.song)}/>
        
       </Col>
-      <Col>
-      x
-      </Col>
+     
       </>
     );
   }

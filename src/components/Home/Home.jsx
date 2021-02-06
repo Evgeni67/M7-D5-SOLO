@@ -8,6 +8,11 @@ import { Alert } from "react-bootstrap";
 
 const mapStateToProps = (state) => state;
 const mapDispatchToProps = (dispatch) => ({
+  selectSong: (song) =>
+    dispatch({
+      type: "SELECT_SONG",
+      payload: song,
+    }),
   addDataToArtist: async (artistName) =>
     dispatch(async (dispatch, getState) => {
       let response = await fetch(
@@ -66,9 +71,9 @@ class Home extends Component {
   url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=";
 
   fetchsongs = async () => {
-    await this.props.addDataToArtist("eminem");
     await this.props.addDataToArtist("muse");
     await this.props.addDataToArtist("ariana");
+    await this.props.selectSong(this.props.songsArray.eminemSongs.slice(0,1)[0])
     console.log(this.props.songsArray.eminemSongs);
     console.log("PROPS->",this.props )
     console.log()
@@ -122,6 +127,7 @@ class Home extends Component {
 
   componentDidMount=async() => {
     await this.fetchsongs();
+    
     console.log("BIG PROBLEM",this.props)
     console.log("from state",this.state.eminemSongs)
   }
