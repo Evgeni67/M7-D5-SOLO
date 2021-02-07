@@ -139,10 +139,10 @@ class Sidebar extends Component {
                       {Object.getOwnPropertyNames(
                         this.props.songsArray.playlists
                       ).map((name) => (
-                        <Row className="dropdownPlaylist" onClick = {() => (this.props.changeCurrentPlaylist( this.props.songsArray.playlists[name]))}>
-                         
+                        <Row className="dropdownPlaylist" onClick = {() => (this.props.changeCurrentPlaylist( name))}>
+                           <Link to="/PlaylistPage" className="add-link">
                             {name}
-                           
+                            </Link>
                         </Row>
                       ))}
                       <Row className="dropdownPlaylist">

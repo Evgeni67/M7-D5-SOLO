@@ -1,6 +1,12 @@
 body {
   background: rgb(2, 0, 36);
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(27, 56, 91, 1) 0%, rgba(35, 77, 109, 1) 41%, rgba(0, 5, 64, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(27, 56, 91, 1) 0%,
+    rgba(35, 77, 109, 1) 41%,
+    rgba(0, 5, 64, 1) 100%
+  );
   overflow-x: hidden;
   background-size: 100% 100%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -18,21 +24,40 @@ body {
   text-decoration: none;
   margin-left: 100px;
 }
-.songImage{
-  transition:ease-in-out 0.8s
+.songImage {
+  transition: ease-in-out 0.8s;
+}
+[form="carform"] {
+  border: none;
+}
+.optionRow {
+  color: whitesmoke;
+  border-bottom: #1ed760 1.1px solid;
+  border-radius: 15px;
+}
+.options {
+  position: absolute;
+  background-color: black;
+  border-radius: 15px;
+  width: 120px;
+  border:#1ed760 1.1px solid;
+  border-bottom:none
 }
 .songImage:hover > .plus {
-  visibility:visible;
-  font-size:20px;
+  visibility: visible;
+  font-size: 20px;
+  position: relative;
+}
+.songsRow{
+  margin-left:260px;
+}
+.plus {
+  color: green;
+  visibility: hidden;
   position: absolute;
-  top: 0;
-  right: 0;
+  height:0px
 }
-.plus{
-  color:green;
-  visibility:hidden;
-}
-.breadcrumb>li+li:before {
+.breadcrumb > li + li:before {
   color: #ccc;
   content: " " !important;
   padding: 0 20px;
@@ -45,7 +70,6 @@ body {
 
 /*breadcrumb end*/
 
-
 .underbar {
   width: 0;
   height: 5px;
@@ -56,7 +80,6 @@ body {
   -webkit-transition: 0.5s ease;
 }
 
-
 li {
   -webkit-transition: 0.5s ease;
   cursor: pointer;
@@ -64,10 +87,11 @@ li {
 }
 
 li:hover {
-  text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8), 0 -4px 15px rgba(255, 255, 255, 0.5);
+  text-shadow: 0px -2px 0px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.8),
+    0 -4px 15px rgba(255, 255, 255, 0.5);
 }
 
-li:hover>.underbar {
+li:hover > .underbar {
   position: absolute;
   left: 10px;
   width: 45px;
@@ -81,34 +105,33 @@ li a:hover {
   text-decoration: none !important;
 }
 
-li:nth-of-type(2):hover>.underbar {
+li:nth-of-type(2):hover > .underbar {
   position: absolute;
   left: 40px;
   width: 44px;
   background: #1ed760;
 }
 
-li:nth-of-type(3):hover>.underbar {
+li:nth-of-type(3):hover > .underbar {
   position: absolute;
   left: 46px;
   width: 110px;
   background: #1ed760;
 }
 
-li:nth-of-type(4):hover>.underbar {
+li:nth-of-type(4):hover > .underbar {
   position: absolute;
   left: 42px;
   width: 75px;
   background: #1ed760;
 }
 
-li:nth-of-type(5):hover>.underbar {
+li:nth-of-type(5):hover > .underbar {
   position: absolute;
   left: 40px;
   width: 50px;
   background: #1ed760;
 }
-
 
 .songCardTitle {
   text-align: center;
@@ -116,7 +139,7 @@ li:nth-of-type(5):hover>.underbar {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: .20s ease-in-out;
+  transition: 0.2s ease-in-out;
   color: #252525;
 }
 
@@ -125,13 +148,12 @@ li:nth-of-type(5):hover>.underbar {
 }
 
 .songCover:hover ~ .songCardTitle {
-  transition: .20s ease-in-out;
-  color: #fff!important;
-
+  transition: 0.2s ease-in-out;
+  color: #fff !important;
 }
-.addComment{
+.addComment {
   position: absolute;
-  top:5px;
+  top: 5px;
   color: #fff;
   right: 25px;
   background-color: rgba(0, 0, 0, 0.4);
@@ -139,6 +161,6 @@ li:nth-of-type(5):hover>.underbar {
   border: none;
   padding: 5px 10px;
 }
-.imageOfSong{
+.imageOfSong {
   margin-left: 10px;
 }

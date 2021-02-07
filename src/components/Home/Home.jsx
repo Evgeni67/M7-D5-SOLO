@@ -27,9 +27,7 @@ const mapDispatchToProps = (dispatch) => ({
         }
       );
       let data = await response.json();
-      console.log("DATA ->" )
-      console.log(data.data);
-      console.log("<- DATA" )
+  
       let songs = data.data
       if (artistName === "eminem") {
         dispatch({
@@ -74,9 +72,6 @@ class Home extends Component {
     await this.props.addDataToArtist("muse");
     await this.props.addDataToArtist("ariana");
     await this.props.selectSong(this.props.songsArray.eminemSongs.slice(0,1)[0])
-    console.log(this.props.songsArray.eminemSongs);
-    console.log("PROPS->",this.props )
-    console.log()
 
     await Promise.all([
       fetch(this.url + "eminem", {
@@ -127,9 +122,7 @@ class Home extends Component {
 
   componentDidMount=async() => {
     await this.fetchsongs();
-    
-    console.log("BIG PROBLEM",this.props)
-    console.log("from state",this.state.eminemSongs)
+ 
   }
 
   render() {

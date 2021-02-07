@@ -6,7 +6,7 @@ import Player from "./components/Player/Player";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import AlbumPage from "./components/Detail/AlbumPage";
+import PlaylistPage from "./components/Playlist/PlaylistPage";
 import ArtistPage from "./components/ArtistPage/ArtistPage";
 import Comments from "./components/Comments/Comments";
 import { connect } from "react-redux";
@@ -31,9 +31,7 @@ const mapDispatchToProps = (dispatch) => ({
         }
       );
       let data = await response.json();
-      console.log("DATA ->");
-      console.log(data.data);
-      console.log("<- DATA");
+     
       let songs = data.data;
       if (artistName === "eminem") {
         dispatch({
@@ -77,9 +75,11 @@ class App extends Component {
           <Sidebar />
           <Route path="/" exact render={(props) => <Home {...props} />} />
           <Route
-            path="/AlbumPage/:id"
-            render={(props) => <AlbumPage {...props} />}
+            path="/PlaylistPage"
+            exact
+            render={(props) => <PlaylistPage {...props} />}
           />
+
           <Route
             path="/ArtistPage"
             exact
