@@ -40,10 +40,17 @@ export default function (state = {}, action) {
               console.log(action.payload);
               return {
                 ...state,
-                [action.payload]:[],
+                playlists:{...state.playlists, [action.payload]:[]}
               };
+              case "CHANGE_CURRENT_PLAYLIST":
+                console.log(action.payload);
+                return {
+                  ...state,
+                 currentPlaylist:action.payload
+                };
         default:
         return state
     }
   }
+  //changeCurrrentPlaylist()
   

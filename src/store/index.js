@@ -14,6 +14,7 @@ export const initialState = {
     likedSongs:[],
     playlists:{},
     isSongSelected:false,
+    currentPlaylist:[]
   },
   load: {
     loading: false,

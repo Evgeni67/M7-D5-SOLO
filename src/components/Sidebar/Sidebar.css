@@ -9,7 +9,22 @@
     margin-left: 0;
     top:0;
   }
-  
+  [type="button"]{
+    background-color: black!important;
+    border-radius:10px
+  }
+  .containerPlylists{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    background-color:gray;
+    width:100%;
+    margin-top: -7.68px;
+    border-radius:3px
+  }
+  .Dropdown{
+    background-color:black!important;
+  }
   #navbarNavDropdown .navbar-nav {
     display: flex !important;
     flex-direction: column;
@@ -94,6 +109,13 @@
     padding-right: 20px;
     width: 170px;
   }
+  .addPlaylist{
+    color: #1db954;
+  transition:ease-in-out 0.6
+  }
+  .addToPlaylist:hover{
+    font-size: 25px;
+  }
   .nav-profile-item {
     border-bottom: 1px solid rgb(165, 164, 164);
     font-size: 14px;
@@ -103,9 +125,45 @@
     color: white !important;
     z-index: 100;
   }
+  @keyframes growDown {
+    0% {
+      transform: scaleY(0)
+    }
+    80% {
+      transform: scaleY(1.1)
+    }
+    100% {
+      transform: scaleY(1)
+    }
+  }
+  .playlistContainer{
+    display:flex;
+    justify-content: left;
+    flex-direction: column;
+    transition: ease-in-out 1s;
+    height:0px;
+    animation: growDown 500ms ease-in-out forwards;
+  transform-origin: top center
+  }
+  .playlistText:hover > .playlistContainer{
+    display:none;
+  }
+  .formAddPlaylist{
+    width:100px;
+    height:40px;
+    font-size: 5px;
+  }
+  .playlistContainer.show{
+    height:100%
+  }
+  .dropdownPlaylist{
+    transition:ease-in-out 0.6s
+  }
+  .dropdownPlaylist:hover{
+   font-size: 25px;
+  }
   /*SIDE NAVBAR END*/
 
   .add-link:hover{
  text-decoration: none!important;
   }
-  
